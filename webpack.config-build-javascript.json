@@ -1,0 +1,577 @@
+{
+  "context": "D:\\dev\\source\\gatsby\\typescript-issue",
+  "entry": {
+    "polyfill": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfill-entry",
+    "app": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\production-app"
+  },
+  "output": {
+    "filename": "[name]-[contenthash].js",
+    "chunkFilename": "[name]-[contenthash].js",
+    "path": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\public",
+    "publicPath": "/"
+  },
+  "module": {
+    "rules": [
+      {
+        "test": "/\\.(js|mjs|jsx)$/",
+        "include": "modulePath => {\n          // when it's not coming from node_modules we treat it as a source file.\n          if (!vendorRegex.test(modulePath)) {\n            return true;\n          } // If the module uses Gatsby as a dependency\n          // we want to treat it as src so we can extract queries\n\n\n          return modulesThatUseGatsby.some(module => modulePath.includes(module.path));\n        }",
+        "type": "javascript/auto",
+        "use": [
+          {
+            "options": {
+              "stage": "build-javascript",
+              "cacheDirectory": "D:\\dev\\source\\gatsby\\typescript-issue\\.cache\\webpack\\babel",
+              "configFile": true,
+              "compact": true
+            },
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\gatsby\\dist\\utils\\babel-loader.js"
+          }
+        ]
+      },
+      {
+        "test": "/\\.ya?ml/",
+        "use": [
+          {
+            "options": {},
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\json-loader\\index.js"
+          },
+          {
+            "options": {},
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\yaml-loader\\index.js"
+          }
+        ]
+      },
+      {
+        "use": [
+          {
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\url-loader\\dist\\cjs.js",
+            "options": {
+              "limit": 10000,
+              "name": "static/[name]-[hash].[ext]",
+              "fallback": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\file-loader\\dist\\cjs.js"
+            }
+          }
+        ],
+        "test": "/\\.(eot|otf|ttf|woff(2)?)(\\?.*)?$/"
+      },
+      {
+        "use": [
+          {
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\url-loader\\dist\\cjs.js",
+            "options": {
+              "limit": 10000,
+              "name": "static/[name]-[hash].[ext]",
+              "fallback": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\file-loader\\dist\\cjs.js"
+            }
+          }
+        ],
+        "test": "/\\.(ico|svg|jpg|jpeg|png|gif|webp)(\\?.*)?$/"
+      },
+      {
+        "use": [
+          {
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\url-loader\\dist\\cjs.js",
+            "options": {
+              "limit": 10000,
+              "name": "static/[name]-[hash].[ext]",
+              "fallback": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\file-loader\\dist\\cjs.js"
+            }
+          }
+        ],
+        "test": "/\\.(mp4|webm|ogv|wav|mp3|m4a|aac|oga|flac)$/"
+      },
+      {
+        "use": [
+          {
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\file-loader\\dist\\cjs.js",
+            "options": {
+              "name": "static/[name]-[hash].[ext]"
+            }
+          }
+        ],
+        "test": "/\\.pdf$/"
+      },
+      {
+        "test": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\@reach\\router\\es\\index.js",
+        "type": "javascript/auto",
+        "use": [
+          {
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\gatsby\\dist\\utils\\reach-router-add-basecontext-export-loader.js"
+          }
+        ]
+      },
+      {
+        "test": "/\\.(js|mjs)$/",
+        "exclude": "modulePath => {\n          // If dep is user land code, exclude\n          if (!vendorRegex.test(modulePath)) {\n            return true;\n          } // If dep uses Gatsby, exclude\n\n\n          if (modulesThatUseGatsby.some(module => modulePath.includes(module.path))) {\n            return true;\n          }\n\n          return doNotPolyfillRegex.test(modulePath);\n        }",
+        "type": "javascript/auto",
+        "use": [
+          {
+            "options": {
+              "cacheDirectory": "D:\\dev\\source\\gatsby\\typescript-issue\\.cache\\webpack\\babel",
+              "babelrc": false,
+              "configFile": false,
+              "compact": false,
+              "presets": [
+                [
+                  "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\babel-preset-gatsby\\dependencies.js",
+                  {
+                    "stage": "build-javascript"
+                  }
+                ]
+              ],
+              "sourceMaps": false,
+              "cacheIdentifier": "build-javascript---gatsby-dependencies@0.5.4"
+            },
+            "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\babel-loader\\lib\\index.js"
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "use": [
+              {
+                "options": {
+                  "hmr": false
+                },
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\mini-css-extract-plugin\\dist\\loader.js"
+              },
+              {
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\css-loader\\index.js",
+                "options": {
+                  "sourceMap": false,
+                  "camelCase": "dashesOnly",
+                  "localIdentName": "[name]--[local]--[hash:base64:5]",
+                  "modules": true,
+                  "importLoaders": 1
+                }
+              },
+              {
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\postcss-loader\\src\\index.js",
+                "options": {
+                  "ident": "postcss-1",
+                  "sourceMap": false,
+                  "plugins": "loader => {\n            var _options, _ref;\n\n            plugins = (typeof plugins === `function` ? plugins(loader) : plugins) || [];\n            const autoprefixerPlugin = (0, _autoprefixer.default)({\n              overrideBrowserslist,\n              flexbox: `no-2009`,\n              ...((_options = (_ref = plugins.find(plugin => plugin.postcssPlugin === `autoprefixer`)) === null || _ref === void 0 ? void 0 : _ref.options) !== null && _options !== void 0 ? _options : {})\n            });\n            return [_postcssFlexbugsFixes.default, autoprefixerPlugin, ...plugins];\n          }"
+                }
+              }
+            ],
+            "test": "/\\.module\\.css$/"
+          },
+          {
+            "use": [
+              {
+                "options": {
+                  "hmr": false
+                },
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\mini-css-extract-plugin\\dist\\loader.js"
+              },
+              {
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\css-loader\\index.js",
+                "options": {
+                  "sourceMap": false,
+                  "camelCase": "dashesOnly",
+                  "localIdentName": "[name]--[local]--[hash:base64:5]",
+                  "importLoaders": 1
+                }
+              },
+              {
+                "loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\postcss-loader\\src\\index.js",
+                "options": {
+                  "ident": "postcss-2",
+                  "sourceMap": false,
+                  "plugins": "loader => {\n            var _options, _ref;\n\n            plugins = (typeof plugins === `function` ? plugins(loader) : plugins) || [];\n            const autoprefixerPlugin = (0, _autoprefixer.default)({\n              overrideBrowserslist,\n              flexbox: `no-2009`,\n              ...((_options = (_ref = plugins.find(plugin => plugin.postcssPlugin === `autoprefixer`)) === null || _ref === void 0 ? void 0 : _ref.options) !== null && _options !== void 0 ? _options : {})\n            });\n            return [_postcssFlexbugsFixes.default, autoprefixerPlugin, ...plugins];\n          }"
+                }
+              }
+            ],
+            "test": "/\\.css$/"
+          }
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "options": {
+        "resourceRegExp": "/^\\.\\/locale$/",
+        "contextRegExp": "/moment$/"
+      },
+      "checkIgnore": "function () { [native code] }"
+    },
+    {
+      "definitions": {
+        "process.env": "({})",
+        "process.env.NODE_ENV": "\"production\"",
+        "process.env.PUBLIC_DIR": "\"D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue/public\"",
+        "process.env.BUILD_STAGE": "\"build-javascript\"",
+        "process.env.GATSBY_BUILD_STAGE": "\"build-javascript\"",
+        "process.env.GATSBY_LOGGER": "\"ink\"",
+        "__BASE_PATH__": "\"\"",
+        "__PATH_PREFIX__": "\"\"",
+        "__ASSET_PREFIX__": "\"\""
+      }
+    },
+    {},
+    {
+      "options": {
+        "filename": "[name].[contenthash].css",
+        "moduleFilename": "() => this.options.filename || DEFAULT_FILENAME",
+        "ignoreOrder": false,
+        "chunkFilename": "[name].[contenthash].css"
+      }
+    },
+    {
+      "plugin": {
+        "name": "GatsbyWebpackStatsExtractor"
+      }
+    },
+    {
+      "definitions": {}
+    }
+  ],
+  "target": "web",
+  "devtool": "source-map",
+  "performance": {
+    "hints": false
+  },
+  "mode": "production",
+  "resolveLoader": {
+    "modules": [
+      "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules",
+      "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\gatsby\\dist\\loaders",
+      "node_modules"
+    ],
+    "plugins": [
+      {
+        "apply": "function nothing() {\n  // ¯\\_(ツ)_/¯\n}"
+      }
+    ]
+  },
+  "resolve": {
+    "extensions": [
+      ".mjs",
+      ".js",
+      ".jsx",
+      ".wasm",
+      ".json",
+      ".ts",
+      ".tsx"
+    ],
+    "alias": {
+      "@reach/router": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\@reach\\router\\es",
+      "object.assign": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\object-assign.js",
+      "object-assign$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\object-assign.js",
+      "@babel/runtime/helpers/extends.js$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\object-assign.js",
+      "unfetch$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\fetch.js",
+      "unfetch/polyfill$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\no-op.js",
+      "isomorphic-unfetch$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\fetch.js",
+      "whatwg-fetch$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\whatwg-fetch.js",
+      "url-polyfill$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\polyfills\\\\no-op.js",
+      "gatsby$": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\gatsby-browser-entry.js",
+      "@babel/runtime": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\@babel\\runtime",
+      "react-hot-loader": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\react-hot-loader",
+      "react-lifecycles-compat": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\react-lifecycles-compat.js",
+      "create-react-context": "D:\\\\dev\\\\source\\\\gatsby\\\\typescript-issue\\\\.cache\\\\create-react-context.js",
+      "@pmmmwh/react-refresh-webpack-plugin": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\@pmmmwh\\react-refresh-webpack-plugin",
+      "socket.io-client": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules\\socket.io-client",
+      "$virtual": "D:\\dev\\source\\gatsby\\typescript-issue\\_this_is_virtual_fs_path_\\$virtual"
+    },
+    "plugins": [
+      {
+        "apply": "function nothing() {\n  // ¯\\_(ツ)_/¯\n}"
+      },
+      {
+        "apply": "function nothing() {\n  // ¯\\_(ツ)_/¯\n}"
+      },
+      {
+        "apply": "function nothing() {\n  // ¯\\_(ツ)_/¯\n}",
+        "makePlugin": "(locator, filter) => process.versions.pnp ? {\n  apply: makeResolver(locator, filter),\n} : {\n  apply: nothing,\n}",
+        "moduleLoader": "module => process.versions.pnp ? {\n  apply: makeResolver(getModuleLocator(module)),\n} : {\n  apply: nothing,\n}",
+        "topLevelLoader": {
+          "apply": "function nothing() {\n  // ¯\\_(ツ)_/¯\n}"
+        },
+        "bind": "(filter, module, dependency) => process.versions.pnp ? {\n  apply: makeResolver(dependency ? getDependencyLocator(getModuleLocator(module), dependency) : getModuleLocator(module), filter),\n} : {\n  apply: nothing,\n}",
+        "tsLoaderOptions": "(options = {}) => process.versions.pnp ? Object.assign({}, options, {\n  resolveModuleName: resolveModuleName,\n  resolveTypeReferenceDirective: resolveModuleName,\n}) : options",
+        "forkTsCheckerOptions": "(options = {}) => process.versions.pnp ? Object.assign({}, options, {\n  resolveModuleNameModule: require.resolve(`./ts`),\n  resolveTypeReferenceDirectiveModule: require.resolve(`./ts`),\n}) : options"
+      },
+      {
+        "_coreJSNodeModulesPath": "D:\\dev\\source\\gatsby\\typescript-issue\\node_modules"
+      },
+      {
+        "cache": {},
+        "themes": [
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+            "themeName": "dev-404-page"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+            "themeName": "load-babel-config"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+            "themeName": "internal-data-bridge"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby/dist/internal-plugins/prod-404",
+            "themeName": "prod-404"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
+            "themeName": "webpack-theme-component-shadowing"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-react-helmet",
+            "themeName": "gatsby-plugin-react-helmet"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-source-filesystem",
+            "themeName": "gatsby-source-filesystem"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-transformer-sharp",
+            "themeName": "gatsby-transformer-sharp"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-sharp",
+            "themeName": "gatsby-plugin-sharp"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-manifest",
+            "themeName": "gatsby-plugin-manifest"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue",
+            "themeName": "default-site-plugin"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-typescript",
+            "themeName": "gatsby-plugin-typescript"
+          },
+          {
+            "themeDir": "D:/dev/source/gatsby/typescript-issue/node_modules/gatsby-plugin-page-creator",
+            "themeName": "gatsby-plugin-page-creator"
+          }
+        ],
+        "projectRoot": "D:/dev/source/gatsby/typescript-issue",
+        "extensions": [
+          ".mjs",
+          ".js",
+          ".jsx",
+          ".wasm",
+          ".json",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ]
+  },
+  "node": {
+    "__filename": true
+  },
+  "optimization": {
+    "runtimeChunk": {
+      "name": "webpack-runtime"
+    },
+    "moduleIds": "hashed",
+    "splitChunks": {
+      "chunks": "all",
+      "cacheGroups": {
+        "default": false,
+        "vendors": false,
+        "framework": {
+          "chunks": "all",
+          "name": "framework",
+          "test": "/(?<!node_modules.*)[\\\\/]node_modules[\\\\/](react|react-dom|scheduler|prop-types)[\\\\/]/",
+          "priority": 40,
+          "enforce": true
+        },
+        "lib": {
+          "test": "test(module) {\n            return !isCssModule(module) && module.size() > 160000 && /node_modules[/\\\\]/.test(module.identifier());\n          }",
+          "name": "name(module) {\n            const hash = crypto.createHash(`sha1`);\n\n            if (!module.libIdent) {\n              throw new Error(`Encountered unknown module type: ${module.type}. Please open an issue.`);\n            }\n\n            hash.update(module.libIdent({\n              context: program.directory\n            }));\n            return hash.digest(`hex`).substring(0, 8);\n          }",
+          "priority": 30,
+          "minChunks": 1,
+          "reuseExistingChunk": true
+        },
+        "commons": {
+          "name": "commons",
+          "minChunks": 4,
+          "priority": 20
+        },
+        "shared": {
+          "test": "test(module) {\n            return !isCssModule(module);\n          }",
+          "name": "name(module, chunks) {\n            const hash = crypto.createHash(`sha1`).update(chunks.reduce((acc, chunk) => acc + chunk.name, ``)).digest(`hex`);\n            return hash;\n          }",
+          "priority": 10,
+          "minChunks": 2,
+          "reuseExistingChunk": true
+        },
+        "styles": {
+          "test": "test(module) {\n            return isCssModule(module);\n          }",
+          "name": "styles",
+          "priority": 40,
+          "enforce": true
+        }
+      },
+      "maxAsyncRequests": null,
+      "maxInitialRequests": 25,
+      "minSize": 20000
+    },
+    "minimizer": [
+      {
+        "options": {
+          "test": "/\\.m?js(\\?.*)?$/i",
+          "chunkFilter": "() => true",
+          "warningsFilter": "() => true",
+          "extractComments": false,
+          "sourceMap": true,
+          "cache": "D:\\dev\\source\\gatsby\\typescript-issue\\.cache\\webpack\\terser",
+          "cacheKeys": "defaultCacheKeys => defaultCacheKeys",
+          "parallel": true,
+          "exclude": "/\\.min\\.js/",
+          "terserOptions": {
+            "output": {
+              "ecma": 5
+            },
+            "ie8": false,
+            "mangle": {
+              "safari10": true
+            },
+            "parse": {
+              "ecma": 8
+            },
+            "compress": {
+              "ecma": 5
+            }
+          }
+        }
+      },
+      {
+        "pluginDescriptor": {
+          "name": "OptimizeCssAssetsWebpackPlugin"
+        },
+        "options": {
+          "assetProcessors": [
+            {
+              "phase": "compilation.optimize-chunk-assets",
+              "regExp": "/\\.css(\\?.*)?$/i",
+              "processor": "(assetName, asset, assets) =>\n            this.processCss(assetName, asset, assets)"
+            }
+          ],
+          "assetNameRegExp": "/\\.css(\\?.*)?$/i",
+          "cssProcessor": "function creator() {\n    var transformer = initializer.apply(void 0, arguments);\n    transformer.postcssPlugin = name;\n    transformer.postcssVersion = new _processor.default().version;\n    return transformer;\n  }",
+          "cssProcessorOptions": {},
+          "cssProcessorPluginOptions": {
+            "preset": [
+              "default",
+              {
+                "svgo": {
+                  "full": true,
+                  "plugins": [
+                    {
+                      "removeUselessDefs": true,
+                      "addAttributesToSVGElement": true,
+                      "addClassesToSVGElement": true,
+                      "cleanupAttrs": true,
+                      "cleanupEnableBackground": true,
+                      "cleanupIDs": true,
+                      "cleanupListOfValues": true,
+                      "cleanupNumericValues": true,
+                      "collapseGroups": true,
+                      "convertColors": true,
+                      "convertPathData": true,
+                      "convertStyleToAttrs": true,
+                      "convertTransform": true,
+                      "inlineStyles": true,
+                      "mergePaths": true,
+                      "minifyStyles": true,
+                      "moveElemsAttrsToGroup": true,
+                      "moveGroupAttrsToElems": true,
+                      "prefixIds": true,
+                      "removeAttributesBySelector": true,
+                      "removeAttrs": true,
+                      "removeComments": true,
+                      "removeDesc": true,
+                      "removeDimensions": true,
+                      "removeDoctype": true,
+                      "removeEditorsNSData": true,
+                      "removeElementsByAttr": true,
+                      "removeEmptyAttrs": true,
+                      "removeEmptyContainers": true,
+                      "removeEmptyText": true,
+                      "removeHiddenElems": true,
+                      "removeMetadata": true,
+                      "removeNonInheritableGroupAttrs": true,
+                      "removeOffCanvasPaths": true,
+                      "removeRasterImages": true,
+                      "removeScriptElement": true,
+                      "removeStyleElement": true,
+                      "removeTitle": true,
+                      "removeUnknownsAndDefaults": true,
+                      "removeUnusedNS": true,
+                      "removeUselessStrokeAndFill": true,
+                      "removeXMLNS": true,
+                      "removeXMLProcInst": true,
+                      "reusePaths": true,
+                      "sortAttrs": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "phaseAssetProcessors": {
+          "compilation.optimize-chunk-assets": [
+            {
+              "phase": "compilation.optimize-chunk-assets",
+              "regExp": "/\\.css(\\?.*)?$/i",
+              "processor": "(assetName, asset, assets) =>\n            this.processCss(assetName, asset, assets)"
+            }
+          ],
+          "compilation.optimize-assets": [],
+          "emit": []
+        },
+        "deleteAssetsMap": {}
+      }
+    ]
+  }
+}
